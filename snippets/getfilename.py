@@ -1,5 +1,5 @@
 from tkinter import filedialog
-
+# ...
 # root = tk.Tk()
 
 def getfilename(_type=""):
@@ -14,4 +14,5 @@ def getfilename(_type=""):
 	return filename
 
 print(getfilename(""))
+
 

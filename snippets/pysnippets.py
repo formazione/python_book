@@ -1,4 +1,4 @@
-# tkinter advanced: pybookgen
+# tkinter advanced: pysnippets
 
 '''
 Started: 03.12.2020 - v. 0.1
@@ -7,12 +7,18 @@ Started: 03.12.2020 - v. 0.1
 	- chapter1.txt
 	- chapter1img1.png
 
-GUI
----------------------------------
-PyEbookGen
----------------------------------
- chapter1  | text
-           |
+This is how the GUI appears
+
+            --- GUI ---
+
+   |---------------------------------|
+   |PyEbookGen                       |
+   |---------------------------------|
+   | chapter1  |                     |
+   |           |    some text        |
+   |           |                     |
+   |           |                     |
+   |---------------------------------|
 
 '''
 # module for the gui
@@ -32,19 +38,15 @@ class Win:
 		"Contains all the widgets"
 		def frame():
 			"Contains the list of chapter names in listbox"
-			self._frame = tk.Frame(self.root, bg="gray")
+			self._frame = tk.Frame(self.root, bg="gold")
 			self._frame.grid(column=0, row=0,
-				sticky="NESW")
-			self._frame.grid_columnconfigure(0, weight=0)
+				sticky="nswe") # adapt the fram to the window
 
 		def listbox():
 			"The book chapter name list goes here"
 			self._lbx = tk.Listbox(self._frame, bg="yellow")
-			self._lbx.grid(
-				column=0,
-				row=0,
-				sticky="NESW"
-				) # adapt the listbox to the frame
+			self._lbx.grid(column=0, row=0,
+				sticky="nswe") # adapt the listbox to the frame
 			
 			def insert():
 				for file in os.listdir("snippets"):
@@ -91,9 +93,9 @@ class Win:
 
 
 def create_chapters_folder():
-	"Create the folder for the snippets if not exists"
-	if "snippets" not in os.listdir():
-		os.mkdir("snippets")
+	"Create the folder for the chapters if not exists"
+	if "chapters" not in os.listdir():
+		os.mkdir("chapters")
 		print("Created a folder named chatpters")
 
 def console_intro():
@@ -108,3 +110,4 @@ if __name__ == "__main__":
 	ver = "0.1"
 	win = Win("PySnippets", "0.01", extension=".py")
 	win.root.mainloop()
+

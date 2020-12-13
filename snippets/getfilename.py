@@ -1,6 +1,7 @@
 from tkinter import filedialog
 
 # root = tk.Tk()
+
 def getfilename(_type=""):
 	"Returns the path and name of file selected"
 	# Ex. arg: _type=".txt" if you need only txt files
@@ -13,3 +14,4 @@ def getfilename(_type=""):
 	return filename
 
 print(getfilename(""))
+

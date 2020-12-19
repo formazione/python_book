@@ -29,9 +29,15 @@ class Win:
 		self.window()
 		self.controls()
 
+
+	def save(self):
+		with open(f"snippets/{self.filename}", "w") as file:
+			file.write(self._text.get("0.0", tk.END))
+
 	def controls(self):
 		self.root.bind("<Control-n>", self.newfile)
 		self._lbx.bind("<<ListboxSelect>>", self.showcontent)
+		self._text.bind("<Control-s>", lambda x: self.save())
 
 	def newfile(self, evt):
 		newfilename = input("Name : ") + ".py"
@@ -91,7 +97,10 @@ class Win:
 			
 		def button_new():
 			"The book chapter name list goes here"
-			self.but1 = tk.Button(self._frame, text="New", bg="yellow", command=self.newfile2)
+			self.but1 = tk.Button(self._frame,
+				text="New",
+				bg="yellow",
+				command=self.newfile2)
 			self.but1.grid(
 				column=0,
 				row=1,
@@ -100,24 +109,24 @@ class Win:
 
 		def button_save():
 			"The book chapter name list goes here"
-			self.but2 = tk.Button(self._frame, text="Save", bg="yellow", command=save)
+			
+			self.but2 = tk.Button(
+				self._frame,
+				text="Save",
+				bg="yellow",
+				command=self.save)
+			
 			self.but2.grid(
 				column=0,
 				row=2,
 				sticky="NESW"
 				) # adapt the listbox to the frame
-
-
-
-		def save(evt):
-			with open(f"snippets/{self.filename}", "w") as file:
-				file.write(self._text.get("0.0", tk.END))
 		
 		def text():
 			"Contains the text of selected chapter in listbox"
 			self._text = tk.Text(self._frame2)
 			self._text.grid(column=1, row=0)
-			self._text.bind("<Control-s>", save)
+			
 
 		
 		def widgets_order():

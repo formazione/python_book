@@ -2,5 +2,10 @@
 
 import zipfile
 
-with zipfile.ZipFile("pymemo.zip", 'r') as zip_ref:
+def unzip(name):
+    "Unzip zipped file"
+    with zipfile.ZipFile(name, 'r') as zip_ref:
     zip_ref.extractall(".")
+
+unzip("pymemo.zip")
+

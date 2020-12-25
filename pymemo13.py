@@ -24,13 +24,15 @@ from tkinter import messagebox
 
 
 class Win:
-    def __init__(self, title, version, extension):
+    def __init__(self, title, version, folder, extension):
         self.extension = extension
         self.letter_size = 16
-        self.root = tk.Tk()
-        self.root.title(f"{title}.{version}")
+        self.master = tk.Tk()
+        self.filename= ""
+        self.folder = folder
+        self.master.title(f"{title}.{version}")
         self.window()
-        self.controls()
+        self.binding()
 
     # ==== This are for adjusting characters inside _text
     def big_letters(self):
@@ -49,13 +51,22 @@ class Win:
         else:
             self.small_letters()
 
+    def popup(self,
+        title="",
+        sentence=""):
+
+        tk.Tk().withdraw()
+        name = messagebox.showinfo(
+                title=title,
+                message=sentence)
 
     def save(self):
-        try:
-            with open(f"snippets/{self.filename}", "w") as file:
-                file.write(self._text.get("0.0", tk.END))
-        except:
-            self.popup("Message", "Nothing selected")
+        if self.filename != "":
+            try:
+                with open(f"{self.folder}/{self.filename}", "w") as file:
+                    file.write(self._text.get("0.0", tk.END))
+            except:
+                self.popup("Message", "Nothing selected")
 
 
     def delete(self):
@@ -65,7 +76,7 @@ class Win:
             ask = messagebox.askyesno(title="Delete this file",message=f"You will delete {self.filename}")
             print(ask)
             if ask:
-                os.remove(f"snippets/{self.filename}")
+                os.remove(f"{self.folder}/{self.filename}")
                 self.showlistitems()
         except:
             self.popup("Beware", "You must select the file to delete")
@@ -82,63 +93,73 @@ class Win:
         except TypeError:
             return ""
 
-    def popup(self,
-        title="",
-        sentence=""):
+    def run(self, evt):
+        print("ok")
+        print("Running: " + self.folder + "\\" + self.filename)
+        os.startfile(f"{self.folder}\\{self.filename}")
 
-        tk.Tk().withdraw()
-        name = messagebox.showinfo(
-                title=title,
-                message=sentence)
 
-    def controls(self):
-        self.root.bind("<Control-n>", self.newfile)
+    def binding(self):
+        self.master.protocol("WM_DELETE_WINDOW", self.quit)
+        self.master.bind("<Control-n>", self.newfile)
+        self.master.bind("<Escape>", self.quit)
         self._lbx.bind("<<ListboxSelect>>", self.showcontent)
+        self._lbx.bind("<Double-Button-1>", self.run)
         self._text.bind("<Control-s>", lambda x: self.save())
         self._text.bind("<Control-MouseWheel>", self.wheel)
 
+    def quit(self, evt=""):
+    	self.save()
+    	self.master.destroy()
+
     def newfile(self, evt):
+        "Create a new file"
+        self.save()
         newfilename = self.input_filename()
         if newfilename != "":
             with open(f"snippets/{newfilename}", "w") as file:
                 pass
             self._lbx.insert(0, newfilename)
 
+
     def newfile2(self):
+        "Create a new file"
+        self.save()
         newfilename = self.input_filename()
         if newfilename != "":
-            with open(f"snippets/{newfilename}", "w") as file:
+            with open(f"{self.folder}/{newfilename}", "w") as file:
                 pass
             self._lbx.insert(0, newfilename)
 
     def showlistitems(self):
         self._lbx.delete(0, tk.END)
-        for file in os.listdir("snippets"):
+        for file in os.listdir(f"{self.folder}"):
             if file.endswith(self.extension):
                 self._lbx.insert(0, file)
+        self._lbx.focus()
     
     def window(self):
         "Contains all the widgets"
         
         def frame0():
             "Contains the text"
-            self._frame0 = tk.Frame(self.root, bg="gold")
+            self._frame0 = tk.Frame(self.master, bg="gold")
             self._frame0.grid(column=0, columnspan=2, row=0)
         
         def frame():
             "Contains the list of chapter names in listbox"
-            self._frame = tk.Frame(self.root, bg="gray")
+            self._frame = tk.Frame(self.master, bg="gray")
             self._frame.grid(column=0, row=1,
                 sticky="NESW")
             self._frame.grid_columnconfigure(0, weight=0)
         
         def frame2():
             "Contains the text"
-            self._frame2 = tk.Frame(self.root, bg="gold")
+            self._frame2 = tk.Frame(self.master, bg="gold")
             self._frame2.grid(column=1, row=1)
         
         def label_banner():
-            img = tk.PhotoImage(file="snippets/banner.png")
+            img = tk.PhotoImage(file=f"{self.folder}/banner.png")
             self.lb_banner = tk.Label(self._frame0, image=img, bg="yellow")
             self.lb_banner.image = img
             self.lb_banner.grid(column=0, columnspan=2, row=0)
@@ -193,22 +214,25 @@ class Win:
 
         widgets_order()
 
+
     def showcontent(self, evt):
+        self._lbx.focus_set()
+        self.save()
         try:
             filenum = self._lbx.curselection()
             self.filename = self._lbx.get(filenum)
-            with open(f"snippets/{self.filename}") as file:
+            with open(f"{self.folder}/{self.filename}") as file:
                 content = file.read()
             self._text.delete("0.0", tk.END)
             self._text.insert(tk.END, content)
         except:
-            pass
+            self.save()
 
 
-def create_chapters_folder():
+def create_chapters_folder(folder):
     "Create the folder for the snippets if not exists"
-    if "snippets" not in os.listdir():
-        os.mkdir("snippets")
+    if folder not in os.listdir():
+        os.mkdir(folder)
         print("Created a folder named chatpters")
 
 def console_intro():
@@ -219,7 +243,23 @@ Save your chapters in chapters folder
 # ================ main ============
 if __name__ == "__main__":
     console_intro()
-    create_chapters_folder()
+    ###########################################################
+    # CHOOSE TYPE OF FILE AND THE FOLDER WHERE YOU STORE THEM #
+    #
+    #  In case you want to store txt files change to .txt the
+    #  FILE_EXTENSION costant.
+    #  If you need to change the name of the folder where to
+    #  search or save the files change the FOLDER_FOR_FILES
+    #  value to the name of the folder you want
+    #  
+    #                  https://pythonprogramming.altervista.org
+    #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    FOLDER_FOR_FILES = "snippets"
+    FILE_EXTENSION = ".py"
+    #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    create_chapters_folder(FOLDER_FOR_FILES)
     ver = "0.1"
-    win = Win("PySnippets", "0.01", extension=".py")
-    win.root.mainloop()
+    win = Win("Pymemo", "1.0",
+        folder=FOLDER_FOR_FILES,
+        extension=FILE_EXTENSION)
+    win.master.mainloop()

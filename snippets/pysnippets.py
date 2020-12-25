@@ -1,7 +1,7 @@
 # tkinter advanced: pysnippets
 
 
-'''sdasd
+'''
 
 Started: 03.12.2020 - v. 0.1
 
@@ -112,6 +112,7 @@ if __name__ == "__main__":
 	ver = "0.1"
 	win = Win("PySnippets", "0.01", extension=".py")
 	win.root.mainloop()
+
 
 
 

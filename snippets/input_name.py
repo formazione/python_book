@@ -1,4 +1,6 @@
-def input_filename(self,
+from tkinter inport simpledialog
+
+def input_filename(
     title="Enter a new name",
     sentence="Do not put the extension"):
 
@@ -9,3 +11,7 @@ def input_filename(self,
             return name + ".py"
     except TypeError:
         return ""
+
+filename()
+
+

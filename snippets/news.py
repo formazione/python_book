@@ -90,3 +90,10 @@ class NewsApp:
 root = Tk() 
 obj = NewsApp(root) 
 root.mainloop() 
+
+
+
+
+
+
+

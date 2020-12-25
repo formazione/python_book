@@ -27,12 +27,12 @@ class Win:
     def __init__(self, title, version, folder, extension):
         self.extension = extension
         self.letter_size = 16
-        self.root = tk.Tk()
+        self.master = tk.Tk()
         self.filename= ""
         self.folder = folder
-        self.root.title(f"{title}.{version}")
+        self.master.title(f"{title}.{version}")
         self.window()
-        self.controls()
+        self.binding()
 
     # ==== This are for adjusting characters inside _text
     def big_letters(self):
@@ -93,13 +93,18 @@ class Win:
         except TypeError:
             return ""
 
+    def run(self, evt):
+        print("ok")
+        print("Running: " + self.folder + "\\" + self.filename)
+        os.startfile(f"{self.folder}\\{self.filename}")
 
-    def controls(self):
-        self.root.bind("<Control-n>", self.newfile)
+
+    def binding(self):
+        self.master.bind("<Control-n>", self.newfile)
         self._lbx.bind("<<ListboxSelect>>", self.showcontent)
+        self._lbx.bind("<Double-Button-1>", self.run)
         self._text.bind("<Control-s>", lambda x: self.save())
         self._text.bind("<Control-MouseWheel>", self.wheel)
-
 
 
     def newfile(self, evt):
@@ -133,19 +138,19 @@ class Win:
         
         def frame0():
             "Contains the text"
-            self._frame0 = tk.Frame(self.root, bg="gold")
+            self._frame0 = tk.Frame(self.master, bg="gold")
             self._frame0.grid(column=0, columnspan=2, row=0)
         
         def frame():
             "Contains the list of chapter names in listbox"
-            self._frame = tk.Frame(self.root, bg="gray")
+            self._frame = tk.Frame(self.master, bg="gray")
             self._frame.grid(column=0, row=1,
                 sticky="NESW")
             self._frame.grid_columnconfigure(0, weight=0)
         
         def frame2():
             "Contains the text"
-            self._frame2 = tk.Frame(self.root, bg="gold")
+            self._frame2 = tk.Frame(self.master, bg="gold")
             self._frame2.grid(column=1, row=1)
         
         def label_banner():
@@ -252,4 +257,4 @@ if __name__ == "__main__":
     win = Win("Pymemo", "1.0",
         folder=FOLDER_FOR_FILES,
         extension=FILE_EXTENSION)
-    win.root.mainloop()
+    win.master.mainloop()

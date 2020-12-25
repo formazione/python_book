@@ -54,6 +54,7 @@ class Win:
     def popup(self,
         title="",
         sentence=""):
+        "Simple wrapper function for messagebox.showinfo"
 
         tk.Tk().withdraw()
         name = messagebox.showinfo(
@@ -61,6 +62,7 @@ class Win:
                 message=sentence)
 
     def save(self):
+        "Saves the file selected in the listbox"
         if self.filename != "":
             try:
                 with open(f"{self.folder}/{self.filename}", "w") as file:
@@ -259,7 +261,7 @@ if __name__ == "__main__":
     #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     create_chapters_folder(FOLDER_FOR_FILES)
     ver = "0.1"
-    win = Win("Pymemo", "1.0",
+    win = Win("Pymemo", "1.1",
         folder=FOLDER_FOR_FILES,
         extension=FILE_EXTENSION)
     win.master.mainloop()

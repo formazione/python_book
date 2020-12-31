@@ -21,7 +21,7 @@ import tkinter as tk
 import os
 from tkinter import simpledialog
 from tkinter import messagebox
-
+import time
 
 class Win:
     def __init__(self, title, version, folder, extension):
@@ -68,20 +68,20 @@ class Win:
                 with open(f"{self.folder}/{self.filename}", "w") as file:
                     file.write(self._text.get("0.0", tk.END))
             except:
+
                 self.popup("Message", "Nothing selected")
 
 
     def delete(self):
         try:
             self.filename = self._lbx.get(self._lbx.curselection())
-            print(self.filename)
-            ask = messagebox.askyesno(title="Delete this file",message=f"You will delete {self.filename}")
-            print(ask)
-            if ask:
-                os.remove(f"{self.folder}/{self.filename}")
-                self.showlistitems()
-        except:
-            self.popup("Beware", "You must select the file to delete")
+            os.remove(f"{self.folder}/{self.filename}")
+            print(f"Deleted {self.folder}/{self.filename}")
+            self.showlistitems()
+        except OSError as e:
+                    print("Failed with:" , e.sterror)
+                    print("Error code:" , e.code)
+
 
     def input_filename(self,
         title="Enter a new name",
@@ -111,7 +111,7 @@ class Win:
         self._text.bind("<Control-MouseWheel>", self.wheel)
 
     def quit(self, evt=""):
-    	self.save()
+    	#self.save()
     	self.master.destroy()
 
     def newfile(self, evt):
@@ -219,7 +219,7 @@ class Win:
 
     def showcontent(self, evt):
         self._lbx.focus_set()
-        self.save()
+        #self.save()
         try:
             filenum = self._lbx.curselection()
             self.filename = self._lbx.get(filenum)

@@ -20,3 +20,4 @@ tag("p",
 	"left")
 
 root.mainloop()
+

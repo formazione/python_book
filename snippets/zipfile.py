@@ -5,9 +5,11 @@ import zipfile
 def unzip(name):
     "Unzip zipped file"
     with zipfile.ZipFile(name, 'r') as zip_ref:
-    zip_ref.extractall(".")
+        zip_ref.extractall(".")
 
-unzip("pymemo.zip")
+unzip("G:\\pymemo_zip\\pymemo.zip")
+
+
 
 
 

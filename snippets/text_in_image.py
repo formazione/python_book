@@ -34,4 +34,4 @@ def win_with_image():
 	root.mainloop()
 
 create_img_with_text()
-win_with_image()
+# win_with_image()

@@ -210,7 +210,8 @@ class Win:
             self._lbx = tk.Listbox(
                 self._frame,
                 bg="yellow",
-                selectmode=tk.MULTIPLE)
+                # selectmode=tk.MULTIPLE
+                )
             self._lbx.grid(
                 column=0,
                 row=0,

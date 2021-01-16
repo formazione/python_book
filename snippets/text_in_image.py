@@ -33,7 +33,11 @@ def win_with_image():
 	canvas.create_image(int(canvas['width']) // 2,int(canvas['height']) // 2, image=img, anchor=tk.W)
 	root.mainloop()
 
-create_img_with_text()
+create_img_with_text("This is cool")
 # win_with_image()
+
+
+
+
 
 

@@ -28,6 +28,7 @@ class Win:
         self.extension = extension
         self.letter_size = 16
         self.root = tk.Tk()
+        self.root = tk.Tk().withdraw()
         self.filename= ""
         self.folder = folder
         self.root.title(f"{title}.{version}")
@@ -52,6 +53,7 @@ class Win:
         self._text['font'] = "Arial " + str(self.letter_size)
 
     def wheel(self, event):
+        "Font size change when scroll up or down"
         if event.delta == 120:
             self.big_letters()
         else:
@@ -127,7 +129,7 @@ class Win:
     	os.startfile(self.folder)
 
     def quit(self, evt=""):
-    	#self.save()
+    	# self.save()
     	self.root.destroy()
 
     def newfile(self, evt):
@@ -210,7 +212,8 @@ class Win:
             self._lbx = tk.Listbox(
                 self._frame,
                 bg="yellow",
-                selectmode=tk.MULTIPLE)
+                # selectmode=tk.MULTIPLE
+                )
             self._lbx.grid(
                 column=0,
                 row=0,
@@ -258,6 +261,7 @@ class Win:
             button("Files .txt", 0, 6, lambda: self.new_file_extension(".txt"))
             button("Join", 0, 7, self.join)
             button("CLEAR", 0, 8, self.clear)
+            button("Copy", 0, 9, self.copy)
             scrollbars()
             text()
             
@@ -266,12 +270,15 @@ class Win:
     def write_in_text(self, text):
         self._text.delete("0.0", tk.END)
         self._text.insert(tk.END, text)
-        # self._lbx.config(state="normal")
 
     def join(self):
         print("Joining all files")
         text = ""
         # self._lbx.config(state=tk.DISABLED)
+        # self._lbx.selection_clear(0, tk.END)
+        self.filename = ""
+        if "ALL.txt" in os.listdir("snippets"):
+            os.remove("snippets/ALL.txt")
         list_files = [f for f in os.listdir("snippets/") if f.endswith(self.extension)]
         print(list_files)
         list_files.sort()
@@ -279,8 +286,14 @@ class Win:
             with open(f"snippets/{file}") as file_to_add:
                 text += file.split(".")[0] + "\n=========\n"
                 text += file_to_add.read()
-            text += "\n\n\n\n\n"
+        with open("snippets/ALL.txt", "w") as file:
+            file.write(text)
+        self._lbx.insert(0, "ALL.txt")
+        # self.write_in_text()
+        self.showlistitems()
+        self._lbx.select_set(tk.END)
         self.write_in_text(text)
+
         # self.nf = self.newfile2()
         # self.save()
 
@@ -291,7 +304,7 @@ class Win:
 
     def showcontent(self, evt):
         self._lbx.focus_set()
-        #self.save()
+        self.save()
         try:
             filenum = self._lbx.curselection()
             self.filename = self._lbx.get(filenum)
@@ -306,6 +319,9 @@ class Win:
         self._text.delete("0.0", tk.END)
         self.save()
 
+    def copy(self):
+        pass
+
 def create_chapters_folder(folder):
     "Create the folder for the snippets if not exists"
     if folder not in os.listdir():
@@ -316,6 +332,8 @@ def console_intro():
     print("""
 Save your chapters in chapters folder
 """)
+
+
 
 # ================ main ============
 if __name__ == "__main__":
@@ -340,3 +358,4 @@ if __name__ == "__main__":
         folder=FOLDER_FOR_FILES,
         extension=FILE_EXTENSION)
     win.root.mainloop()
+

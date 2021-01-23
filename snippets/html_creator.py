@@ -204,3 +204,4 @@ Book(lista1)  # passa la lista di paragrafi che vuoi
 titolo = "_".join(lista1[0][0].split()) + ".html"
 create_html_file(htmlfile=titolo, see=1)  # This write the file
 # listaparagrafi1[0][0] è il primo titolo, unito con _ per permettere a os.system di aprirlo
+

@@ -1,0 +1,119 @@
+ROE
+return on equity
+return on investment
+return on sales
+return on debts
+
+ROI
+return on investment
+return on equity
+return on sales
+return on debts
+
+ROD
+return on debts
+return on equity
+return on investment
+return on sales
+
+ROS
+return on sales
+return on equity
+return on investment
+return on debts
+
+ROE = redditività
+del capitale proprio
+del capitale investito
+delle vendite
+del capitale di debito
+
+ROI = redditività
+del capitale investito
+del capitale proprio
+delle vendite
+del capitale di debito
+
+ROS = redditività
+delle vendite
+del capitale proprio
+del capitale investito
+del capitale di debito
+
+ROD = redditività
+del capitale di debito
+del capitale proprio
+del capitale investito
+delle vendite
+
+Nell'Attivo dello Stato patrimoniale ci sono
+attivo circolante e immobilizzazioni
+immobilizzazioni e patrimonio netto
+debiti e capitale circolante
+attivo fisso e capitale proprio
+
+L'attivo circolante: dove si trova?
+nell'attivo dello Stato patrimoniale
+nel conto economico
+tra le passività
+nel passivo dello Stato patrimoniale
+
+Il patrimonio netto è uguale a
+attivo - debiti
+ricavi - costi
+debiti - crediti
+Iva a credito - debiti
+
+L'utile è dato da
+ricavi - costi
+ricavi + costi
+debiti - crediti
+iva * 22%
+
+i conti finanziarie funzionano a
+entrate ed uscite
+costi e ricavi
+costi e uscite
+ricavi ed entrate
+
+i conti economici funzionano a
+costi e ricavi
+entrate ed uscite
+costi e uscite
+ricavi ed entrate
+
+In dare dei conti finanziari si rilevano
+entrate, + crediti e -debiti
+uscite, - crediti e +debiti
+costi e rettifiche di ricavi
+ricavi e rettifiche di costi
+
+In avere dei conti finanziari si rilevano
+uscite, - crediti e +debiti
+entrate, + crediti e -debiti
+costi e rettifiche di ricavi
+ricavi e rettifiche di costi
+
+In dare dei conti economici si rilevano
+costi e rettifiche di ricavi
+entrate, + crediti e -debiti
+uscite, - crediti e +debiti
+ricavi e rettifiche di costi
+
+In avere dei conti economici si rilevano
+ricavi e rettifiche di costi
+entrate, + crediti e -debiti
+uscite, - crediti e +debiti
+costi e rettifiche di ricavi
+
+Il bilancio è formato da
+Stato patrimoniale, Conto economico e Nota integrativa
+Stato patrimoniale e Conto economico
+Stato patrimoniale e Nota integrativa
+Stato patrimoniale
+
+Gli indici di redditività danno informazioni sulla
+situazione economica
+situazione finanziaria
+situazione patrimoniale
+sitazione fiscale

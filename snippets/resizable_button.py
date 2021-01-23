@@ -2,6 +2,8 @@ import os
 import tkinter as tk
 import tkinter.ttk as ttk
 
+print(os.getcwd())
+
 class Window():
 	"The main window"
 
@@ -12,11 +14,11 @@ class Window():
 
 		 {"text": "Notepad 1",
 		 "command": "example.txt",
-		 "image": "notepad.PNG"},
+		 "image": "notepad.png"},
 
 		  {"text": "Notepad 2",
 		 "command": "example2.txt",
-		 "image": "notepad.PNG"},
+		 "image": "notepad.png"},
 
 		]
 		self.buttons()
@@ -49,7 +51,7 @@ class Button:
 		tk.Grid.rowconfigure(self.root, col, weight=1)
 
 	def create_button(self):
-		self.button.image = self.data["image"]
+		self.image = self.data["image"]
 		self.button = tk.Button(
 			master=self.root,
 			text= self.text,
@@ -67,3 +69,10 @@ class Button:
 
 
 app = Window()
+
+
+
+
+
+
+

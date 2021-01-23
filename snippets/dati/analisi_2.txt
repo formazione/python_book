@@ -1,0 +1,47 @@
+ROE
+return on equity
+return on investment
+return on sales
+return on debts
+
+ROI
+return on investment
+return on equity
+return on sales
+return on debts
+
+ROD
+return on debts
+return on equity
+return on investment
+return on sales
+
+ROS
+return on sales
+return on equity
+return on investment
+return on debts
+
+ROE = redditività
+del capitale proprio
+del capitale investito
+delle vendite
+del capitale di debito
+
+ROI = redditività
+del capitale investito
+del capitale proprio
+delle vendite
+del capitale di debito
+
+ROS = redditività
+delle vendite
+del capitale proprio
+del capitale investito
+del capitale di debito
+
+ROD = redditività
+del capitale di debito
+del capitale proprio
+del capitale investito
+delle vendite

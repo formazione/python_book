@@ -7,3 +7,4 @@ Insert an Item at the end
 lst.insert(tk.END, entry.get())
 v.set("")
 
+

@@ -1,0 +1,59 @@
+Denaro in cassa è un conto
+Finanziario
+Economico
+
+Crediti v/clienti  è un conto
+Finanziario
+Economico
+
+Merci c/acquisti  è un conto
+Economico
+Finanziario
+
+Merci c/vendite  è un conto
+Economico
+Finanziario
+
+Iva ns Credito  è un conto
+Finanziario
+Economico
+
+Iva ns Debito  è un conto
+Finanziario
+Economico
+
+Debiti v/fornitori è un conto
+Finanziario
+Economico
+
+I debiti vanno in 
+avere
+dare
+
+I costi vanno
+dare
+avere
+
+le entrate vanno in 
+dare
+avere
+
+Nella Partita doppia dare e avere pareggiano
+sempre
+a volte
+
+Se dalla banca prelevo 100 euro
+scrivo 100 in avere
+scrivo 100 in dare
+
+Quando pago un debito di 50 €
+In debiti v/fornitori scrivo 50 € in dare
+In debiti v/fornitori scrivo 50 € in avere
+
+La liquidazione IVA è
+Iva a debito - Iva a credito
+Iva a debito + Iva a credito
+
+L'IVA la pagano definitivamente solo
+i consumatori
+le imprese

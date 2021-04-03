@@ -66,3 +66,4 @@ def quiz(content, qna):
 quiz(modulo1, qna1)
 
 text_time("FINE DEL TEST")
+input()

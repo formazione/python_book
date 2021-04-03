@@ -1,19 +1,17 @@
-from tkinter inport simpledialog
+import tkinter as tk
+from tkinter import simpledialog
 
-def input_filename(
-    title="Enter a new name",
-    sentence="Do not put the extension"):
+def input_text(
+    title="Title",
+    prompt="Question",
+    feedback="ok"):
 
-    #tk.Tk().withdraw()
-    name = simpledialog.askstring(title, sentence)
-    try:
-        if name != "":
-            return name + ".py"
-    except TypeError:
-        return ""
+    tk.Tk().withdraw()
+    name = simpledialog.askstring(title, prompt)
+    print(feedback.format(name))
 
-filename()
-
-
-
-
+if __name__ == "__main__":
+    input_text(
+        "Question",
+        "What is your name?",
+        feedback="So your name is {}!")

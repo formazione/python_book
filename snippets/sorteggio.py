@@ -7,7 +7,7 @@ from tkinter import messagebox
     
 class Win:
     def sorteggio(max):
-        r = [x for x in range(max)]
+        r = [x for x in range(1, max)]
         random.shuffle(r)
         elenco = ""
         for i in r:
@@ -23,8 +23,11 @@ class Win:
             title=title,
             message=sentence)
 
-elenco = Win.sorteggio(15)
+elenco = Win.sorteggio(21)
 Win.popup("Elenco", "Elenco", elenco)
+
+
+
 
 
 

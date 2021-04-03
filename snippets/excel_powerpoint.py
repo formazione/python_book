@@ -1,2 +1,0 @@
-da excel a powerpoint
-

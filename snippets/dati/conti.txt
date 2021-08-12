@@ -1,0 +1,37 @@
+Un acquisto genera
+un costo
+un ricavo
+
+IVA pagata al fornitore = costo
+falso
+vero
+
+Iva incassata dal cliente = ricavo
+falso
+vero
+
+Iva pagata sugli acquisti al fornitore per la mia impresa è
+credito verso lo stato
+debito verso lo stato
+costo
+ricavo
+
+Iva incassata sulle vendite dai clienti per la mia impresa è
+debito verso lo stato, perché è un imposta
+credito verso lo stato, perché la recupero
+costo
+ricavo
+
+Il soggetto inciso dalla IVA è
+il consumatore finale
+la mia impresa
+
+La liquidazione IVA si ottiene da
+Iva a debito - Iva a credito
+Iva a debito + IVa a credito
+
+I conti interessati dall'acquisto di una merce sono
+merci c/acquisti, iva a credito, debiti v/fornitori
+merci c/acquisti, iva a debitp, debiti v/fornitori
+merci c/acquisti, iva a credito, crediti v/fornitori
+merci c/acquisti, iva a debito, creiditi v/clienti

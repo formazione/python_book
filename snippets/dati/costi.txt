@@ -1,0 +1,11 @@
+Calcola il costo pieno di 100 prodotti con costi variabili unitari sono pari a 11,50 € e costi fissi pari a 120.
+1270
+240
+1150
+100
+
+Con un costo pieno di 1270 per 100 prodotti, se voglio guadagnare 300 euro, a che prezzo devo venderli?
+15,70
+12,70
+10,00
+30,00

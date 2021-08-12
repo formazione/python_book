@@ -1,0 +1,59 @@
+1 Quanti euro ci sono?
+3
+2
+1
+
+Quanti euro vedi
+5
+8
+7
+
+Quanti euro ci sono qui
+4
+6
+5
+
+Quanti euro ci sono nella foto?
+7
+10
+6
+
+Quanti sono gli euro?
+6
+5
+7
+
+Quanti euro hai?
+5
+7
+6
+
+Quanti euro ci sono in questa immagine?
+6
+8
+7
+
+Quanti euro puoi contare?
+8
+6
+9
+
+Quanti euro vedi qui?
+10
+8
+6
+
+Quanti euro ci sono?
+11
+9
+10
+
+Quanti euro vedi nella foto?
+1,50
+1
+2
+
+Quanti euro ci sono adesso?
+1 euro
+2 euro
+50 centesimi

@@ -14,9 +14,10 @@ def window(self):
             columnspan=2,
             sticky="nswe"
             )
-        self._frame0.grid_rowconfigure(0, weight=0)
+        # self._frame0.grid_rowconfigure(0, weight=0)
+        # self._frame0.grid_columnconfigure(0, weight=0)
         self._frame0.grid_columnconfigure(0, weight=0)
-        self._frame0.grid_columnconfigure(1, weight=0)
+
     
     def label_banner():
         "This is at 0,0 and occupies 2 column"
@@ -46,20 +47,20 @@ def window(self):
 
     def frame():
         "Contains the list of chapter names in listbox"
-        self._frame = tk.Frame(self.root, bg="gray")
-        self._frame.grid(column=0, row=1, sticky="nswe")
-        for n in range(9):
-            self._frame.grid_rowconfigure(n, weight=1)
-        self._frame.grid_columnconfigure(0, weight=1)
-        # self._frame.grid_columnconfigure(1, weight=1)
+        self._frame = tk.Frame(self.root, width=80, bg="gray")
+        self._frame.place(x=0, y=50)
+        # self._frame.grid(column=0, row=1, sticky="nswe")
+
+        self._frame.grid_rowconfigure(0, weight=1)
+        self._frame.grid_columnconfigure(1, weight=0)
     
     def frame2():
         "Contains the text"
         self._frame2 = tk.Frame(self.root, bg="coral")
-        self._frame2.grid(column=1, row=1, sticky="nswe" )
+        self._frame2.grid(column=1, row=1, sticky="nswe")
         self._frame2.grid_rowconfigure(0, weight=1)
-        # self._frame2.grid_rowconfigure(1, weight=1)
-        self._frame2.grid_columnconfigure(0, weight=1, minsize=1)
+        self._frame2.grid_columnconfigure(1, weight=1)
+        self._frame.grid_columnconfigure(0, weight=1)
     
 
     def listbox():
@@ -83,13 +84,24 @@ def window(self):
         self.scrollbar.grid(column=2, row=0,
             sticky="nswe")
 
+    def text_dark_mode():
+        self._text.config(
+            bg="black",
+            fg="white",
+            insertbackground="white")
+        self._text.focus()
+
     def text():
         "Contains the text of selected chapter in listbox"
         self._text = tk.Text(self._frame2, wrap=tk.WORD)
         self._text.grid(column=0, row=0, sticky="nswe")
         self._text.config(yscrollcommand=self.scrollbar.set)
         self.scrollbar.config(command=self._text.yview)
-        
+        self._text.grid_rowconfigure(0, weight=1)
+        self._text.grid_rowconfigure(0, weight=1)
+        self._text.grid_columnconfigure(0, weight=1)
+        # DARK MODE BG FG
+        text_dark_mode()
     def widgets_order():
         "The widgets on the screen"
         frame0()

@@ -1,0 +1,30 @@
+book
+
+
+2.7.2021
+_text
+config(bg fg)
+cursor
+-------------------- CURSOR BACK GROUND --------------
+import tkinter as tk
+
+textfield = tk.Entry(root)
+textfield.configure(bg="#1C6C0B", insertbackground='white')
+
+
+
+    def text_dark_mode():
+        self._text.config(
+            bg="black",
+            fg="white",
+            insertbackground="white")
+        _text.focus()
+
+    def text():
+        "Contains the text of selected chapter in listbox"
+        self._text = tk.Text(self._frame2, wrap=tk.WORD)
+        self._text.grid(column=0, row=0, sticky="nswe")
+        self._text.config(yscrollcommand=self.scrollbar.set)
+        self.scrollbar.config(command=self._text.yview)
+        # DARK MODE BG FG
+        text_dark_mode()

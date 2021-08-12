@@ -1,0 +1,139 @@
+Un rapporto è
+il risultato di una divisione
+l'uguaglianza di due numeri
+l'uguaglianza di due prodotti
+l'uguaglianza di due divisioni
+
+La proporzione
+l'uguaglianza di due rapporti
+il risultato di una divisione
+l'uguaglianza di due numeri
+l'uguaglianza di due prodotti
+
+Il secondo e il terzo termine di una proporzione sono detti
+medi
+estremi
+aliquote
+somme di riferimento
+
+Dividendo una somma per il totale dei parametri in un riparto ottengo
+il coefficiente di riparto
+una percentuale
+un prodotto
+un'aliquota
+
+100 sta a 20 come 200 sta a x
+x = 40
+x = 10
+x = 5
+x = 6
+
+100 sta a 20 come 250 sta a x
+x = 50
+x = 10
+x = 5
+x = 6
+
+100 sta a 25 come 200 sta a x
+x = 50
+x = 10
+x = 5
+x = 6
+
+100 sta a 25 come 300 sta a x
+x = 75
+x = 50
+x = 40
+x = 6
+
+Nel calcolo percentuale diretto calcolo:
+P
+S
+r
+S o r
+
+Nel calcolo percentuale inverso calcolo:
+S o r
+P
+S
+r
+
+Cosa significa percentuale?
+Si indica il valore di una grandezza riferito a 100
+Si indica il valore di una grandezza riferito a 1000
+Si indica il valore di una grandezza riferito a 10
+Si indica il valore di una grandezza riferito a 1
+
+Qual è la regola fondamentale delle proporzioni
+il prodotto dei medi è uguale al prodotto degli estremi
+il rapporto dei medi è uguale al rapporto degli estremi
+il rapporto dei medi è uguale al prodotto degli estremi
+il prodotto dei medi è uguale al rapporto degli estremi
+
+Se non conosco un estremo lo trovo facendo
+medio x medio : estremo noto
+medio : medio : estremo noto
+medio : medio x estremo noto
+estrem x estremo : medio noto
+
+Se non conosco un medio lo trovo facendo
+estrem x estremo : medio noto
+medio x medio : estremo noto
+medio : medio : estremo noto
+medio : medio x estremo noto
+
+Cosa significa r
+aliquota percentuale
+proporzione
+percentuale totale
+somma di riferimento
+
+Cosa significa S
+somma di riferimento
+aliquota percentuale
+proporzione
+percentuale totale
+
+Cosa significa P
+percentuale totale
+aliquota percentuale
+proporzione
+somma di riferimento
+
+Clicca sul calcolo sopracento
+100 : (100 + r) = S : P
+100 : (100 + r) = S : (S + P)
+100 : (100 - r) = S : (S - P)
+100 : r = S : P
+
+Clicca sul calcolo sottocento
+100 : (100 - r) = S : (S - P)
+100 : (100 + r) = S : P
+100 : (100 + r) = S : (S + P)
+100 : r = S : P
+
+È il compenso che spetta a chi presta una somma di denaro
+interesse
+utile
+busta paga
+salario
+
+Lo sconto mercantile
+non è proporzionale al tempo
+è proporzionale al tempo
+
+Lo sconto commerciale
+non è proporzionale al tempo
+è proporzionale al tempo
+
+Il Montante è
+M = C + I
+M = C - I
+
+Il valore attuale commerciale è
+Vc = C - Sc
+Vc = C + Sc
+
+Le formule dell'interesse e dello sconto sono uguali
+Vero
+Falso

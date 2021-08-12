@@ -8,6 +8,7 @@ def binding(self):
     self._lbx.bind("<<ListboxSelect>>", self.showcontent)
     self._lbx.bind("<Double-Button-1>", self.run)
     self._text.bind("<Control-s>", lambda x: self.save())
-
+    self._text.bind("<Control-c>", lambda x: self.get_text())
     # MOUSE WHELL = CONTROLS FONT SIZE (code/letters.py)
     self._text.bind("<Control-MouseWheel>", lambda evt: wheel(self, evt))
+    self.root.bind("<Control-MouseWheel>", lambda evt: wheel(self, evt))

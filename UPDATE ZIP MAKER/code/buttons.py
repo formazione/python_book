@@ -1,4 +1,6 @@
 import tkinter as tk
+import os
+
 
 def buttons(self):
     "Buttons to attach to _frame on the left below the listbox"
@@ -21,6 +23,8 @@ def buttons(self):
     button("open fld", 0, 4, self.open_folder)
     button("Files .py", 0, 5, lambda: self.new_file_extension(".py"))
     button("Files .txt", 0, 6, lambda: self.new_file_extension(".txt"))
-    button("Join", 0, 7, self.join)
-    button("CLEAR", 0, 8, self.clear)
-    button("Copy", 0, 9, self.copy)
+    button("Files .html", 0, 7, lambda: self.new_file_extension(".html"))
+    button("Join", 0, 8, self.join)
+    button("CLEAR", 0, 9, self.clear)
+    button("Copy", 0, 10, self.copy)
+    button("Open folder", 0, 11, lambda: os.startfile(""))
